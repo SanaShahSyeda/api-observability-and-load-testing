@@ -45,7 +45,9 @@ cd observability-and-load-testing
 docker-compose up -d
 ````
 # run the app
+````bash
 mvn spring-boot:run
+````
 
 
 Actuator endpoints (once running):
@@ -55,9 +57,9 @@ Actuator endpoints (once running):
 
 Run the load test (requires [k6](https://k6.io/) installed separately):
 
-bash
-k6 run k6/load-test.js
-
+````bash
+run k6/load-test.js
+````
 
 Include any required env vars / secrets setup (never commit real secrets; use .env.example).
 
@@ -82,4 +84,4 @@ mvn test
 
 - Language/framework: Java 21, Spring Boot, Spring Data JPA, Spring Boot Actuator, Micrometer
 - Database: PostgreSQL, Liquibase (schema/seed migrations)
-- Infra/tooling: k6 (load testing), Docker Compose, Grafana (optional)
+- Infra/tooling: k6 (load testing), Grafana (optional)
