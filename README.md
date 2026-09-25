@@ -17,12 +17,12 @@ APIs are routinely shipped without any way to see what they're actually doing un
 
 ## What I built
 
-- [ ] Spring Boot API (Order → OrderItem) backed by Postgres, schema/seed data managed with Liquibase
-- [ ] Spring Boot Actuator + micrometer-registry-prometheus, exposing /actuator/health, /actuator/metrics, /actuator/prometheus
-- [ ] Seed data migration inserting a realistic row volume for the target endpoint
-- [ ] k6 load test script(s) under k6/
+- [x] Spring Boot API (Order → OrderItem) backed by Postgres, schema/seed data managed with Liquibase
+- [x] Spring Boot Actuator + micrometer-registry-prometheus, exposing /actuator/health, /actuator/metrics, /actuator/prometheus
+- [x] Seed data migration inserting a realistic row volume for the target endpoint
+- [x] k6 load test script(s) under k6/
 - [x] Baseline ("before") load test results captured under docs/
-- [ ] One identified and fixed bottleneck (N+1 query and/or missing index)
+- [x] One identified and fixed bottleneck (N+1 query and/or missing index)
 - [x] "After" load test results captured under docs/, re-run with the identical k6 script
 - [ ] (Optional) Grafana dashboard via Docker, if added
 
