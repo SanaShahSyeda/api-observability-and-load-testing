@@ -23,7 +23,7 @@ APIs are routinely shipped without any way to see what they're actually doing un
 - [ ] k6 load test script(s) under k6/
 - [x] Baseline ("before") load test results captured under docs/
 - [ ] One identified and fixed bottleneck (N+1 query and/or missing index)
-- [ ] "After" load test results captured under docs/, re-run with the identical k6 script
+- [x] "After" load test results captured under docs/, re-run with the identical k6 script
 - [ ] (Optional) Grafana dashboard via Docker, if added
 
 ## Key decisions & tradeoffs
@@ -70,8 +70,8 @@ Include any required env vars / secrets setup (never commit real secrets; use .e
 
 | | Before | After |
 |---|---|---|
-| p95 latency | 11.14s | TBD |
-| Throughput (RPS) | 2.23 req/s | TBD |
+| p95 latency | 11.14s | 501.54ms |
+| Throughput (RPS) | 2.23 req/s | 15.57 req/s |
 | Bottleneck fixed | — | TBD (e.g. N+1 query / missing index) |
 
 Raw k6 output saved under docs/load-test-before.txt and docs/load-test-after.txt.
