@@ -14,6 +14,6 @@ public class OrderController {
 
     @GetMapping("/orders")
     public List<Order> getOrders() {
-        return orderRepository.findAll();
+        return orderRepository.findAllWithItems();
     }
 }
