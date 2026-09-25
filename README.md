@@ -21,7 +21,7 @@ APIs are routinely shipped without any way to see what they're actually doing un
 - [ ] Spring Boot Actuator + micrometer-registry-prometheus, exposing /actuator/health, /actuator/metrics, /actuator/prometheus
 - [ ] Seed data migration inserting a realistic row volume for the target endpoint
 - [ ] k6 load test script(s) under k6/
-- [ ] Baseline ("before") load test results captured under docs/
+- [x] Baseline ("before") load test results captured under docs/
 - [ ] One identified and fixed bottleneck (N+1 query and/or missing index)
 - [ ] "After" load test results captured under docs/, re-run with the identical k6 script
 - [ ] (Optional) Grafana dashboard via Docker, if added
@@ -57,9 +57,9 @@ Actuator endpoints (once running):
 
 Run the load test (requires [k6](https://k6.io/) installed separately):
 
-````bash
-run k6/load-test.js
-````
+```bash
+k6 run .\k6\load-test.js
+```
 
 Include any required env vars / secrets setup (never commit real secrets; use .env.example).
 
@@ -70,9 +70,9 @@ Include any required env vars / secrets setup (never commit real secrets; use .e
 
 | | Before | After |
 |---|---|---|
-| p95 latency | TBD | TBD |
-| Throughput (RPS) | TBD | TBD |
-| Bottleneck fixed | ; | TBD (e.g. N+1 query / missing index) |
+| p95 latency | 11.14s | TBD |
+| Throughput (RPS) | 2.23 req/s | TBD |
+| Bottleneck fixed | — | TBD (e.g. N+1 query / missing index) |
 
 Raw k6 output saved under docs/load-test-before.txt and docs/load-test-after.txt.
 
